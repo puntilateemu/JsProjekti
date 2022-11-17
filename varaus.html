@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="varaus.css">
+    <title>Varaus</title>
+</head>
+<body>
+
+    <form class="formContainer" onsubmit="submitForm(); return false">
+        <div class="formRowContainer">
+            <div class="inputContainer">
+                <label for="fname">etunimi</label>
+                <input class="inputStyle" type="text" id="fname" name="fname">
+            </div>
+            <div class="inputContainer">
+                <label for="lname">sukunimi</label>
+                <input class="inputStyle" type="text" id="lname" name="lname">
+            </div>
+        </div>
+        <div class="formRowContainer">
+            <div class="inputContainer">
+                <label for="späivä">saapumispäivä</label>
+                <input class="inputStyle" type="text" id="späivä" name="späivä">
+            </div>
+            <div class="inputContainer">
+                <label for="lpäivä">lähtöpäivä</label>
+                <input class="inputStyle" type="text" id="lpäivä" name="lpäivä">
+            </div>
+        </div>
+        <div class="formRowContainer">
+            <div class="inputContainer">
+                <label for="sposti">sähköposti</label>
+                <input class="inputStyle" type="text" id="sposti" name="sposti">
+            </div>
+            <div class="inputContainer">
+                <label for="puhelin">puhelin</label>
+                <input class="inputStyle" type="text" id="puhelin" name="puhelin">
+            </div>
+        </div>
+        <div class="formRowContainer">
+            <div class="inputContainer">
+                <label for="hlö">hlömäärä</label>
+                <input class="inputStyle" type="text" id="hlö" name="hlö">
+            </div>
+        </div>
+        <div class="formRowContainer">
+            
+            <input class="buttonStyle" type="submit" value="Varaa">
+        </div>
+      </form>
+
+    
+</body>
+<script src="./src/varaus.js">
+        
+</script>
+</html>
