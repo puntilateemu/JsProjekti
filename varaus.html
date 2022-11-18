@@ -61,21 +61,21 @@
         </div>
         <div class="formRowContainerSelect">
             <div class="inputContainer" style="margin-right: 25%;">
-                <label for="lisäpalvelu">hotelli palvelut</label>
-                    <select name="lisäpalvelu">
-                        <option value="false">ei palveluita</option>
-                        <option value="Aamiainen">Aamiainen</option>
-                        <option value="Kuntosali">Kuntosali</option>
-                        <option value="lentokenttä">lentokenttä kyyti</option>
+                <label for="lisäpalvelut">Hotellin palvelut:</label>
+                    <select onchange="showSelectedItems2()" name="lisäpalvelut">
+                        <option value="false">Ei lisäpalveluita</option>
+                        <option value="aamiainen">Aamiainen</option>
+                        <option value="kuntosali">Kuntosali</option>
+                        <option value="lentokenttä">Lentokenttäkyyti</option>
                     </select>
             </div>
             <div class="inputContainer">
-                <label for="retker">Retket</label>
+                <label for="retket">Retket:</label>
                     <select onchange="showSelectedItems()" name="retket">
-                        <option value="false">ei retkiä</option>
-                        <option value="veneretki">Vene retki 4h</option>
-                        <option value="kaupunkiretki">kaupunki retki 2h</option>
-                        <option value="museoretki">museo retki 3h</option>
+                        <option value="false">Ei retkiä</option>
+                        <option value="veneretki">Veneretki 4h</option>
+                        <option value="kaupunkiretki">Kaupunkiretki 2h</option>
+                        <option value="museoretki">Museoretki 3h</option>
                     </select>
             </div>
             
@@ -83,10 +83,7 @@
         <div id="retketLista" style="position:absolute; align-self: flex-end;">
             
         </div>
-        <div style="position:absolute; align-self: flex-start;">
-            <p>Retket</p>
-            <p>testi <button aria-label='delete item' onClick='alert("You deleted the item!")' type='button'>X</button></p>
-            
+        <div id="lisäpalvelutLista" style="position:absolute; align-self: flex-start;">
         </div>
         <div class="formRowContainerSelect">
             <input style="margin-right: 10%;" class="buttonStyle" type="button" value="Peruuta" onclick="customAlert('cancel')">

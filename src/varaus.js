@@ -33,7 +33,7 @@ const onDateSelect = () =>{
 
 
 //Custom alertti kysytään että perutaanko vai varataanko
-//onks tää pakollinen??
+//onks tää pakollinen?? En usko että tätä tarvitsee
 const customAlert = (e) =>{
   var custom = document.getElementById('custom') //haetaan customi div
   custom.style.display = 'flex'
@@ -68,10 +68,45 @@ const showSelectedItems = () =>{
   if(retketLista.childNodes.length == 1){
   retketLista.innerHTML = //lisätään listaan
   `   <p>Retket</p>
-  `}if(retketLista.childNodes.length > 1 && retket !== 'false' && document.getElementById('veneretki') == null || document.getElementById('kaupunkiretki') == null || document.getElementById('museoretki') == null){
-  retketLista.innerHTML +=
+  `}if(retketLista.childNodes.length > 1){
+    if(retket == 'false'){
+
+    }if( document.getElementById('veneretki') == null && retket == 'veneretki'){
+    retketLista.innerHTML +=
+  `<p id="${retket}">${retket} <button id="${retket}" aria-label='delete item' onClick='removeItemsFromList(this.id)' type='button'>X</button></p>`
+  }if( document.getElementById('kaupunkiretki') == null && retket == 'kaupunkiretki'){
+    retketLista.innerHTML +=
+  `<p id="${retket}">${retket} <button id="${retket}" aria-label='delete item' onClick='removeItemsFromList(this.id)' type='button'>X</button></p>`
+  }if( document.getElementById('museoretki') == null && retket == 'museoretki'){
+    retketLista.innerHTML +=
   `<p id="${retket}">${retket} <button id="${retket}" aria-label='delete item' onClick='removeItemsFromList(this.id)' type='button'>X</button></p>`
   }
+  }
+}
+
+// näytetään valitut itemit
+const showSelectedItems2 = () =>{
+
+  const lisäpalvelut = document.getElementsByName('lisäpalvelut')[0].value
+  const lpLista = document.getElementById('lisäpalvelutLista')
+  lpLista.style.display = ''
+  if(lpLista.childNodes.length == 1){
+  lpLista.innerHTML = //lisätään listaan
+  `   <p>Lisäpalvelut</p>
+  `}if(lpLista.childNodes.length > 1){
+    if(lisäpalvelut == 'false'){
+
+    }if(document.getElementById('aamiainen') == null && lisäpalvelut == 'aamiainen'){
+    lpLista.innerHTML +=
+  `<p id="${lisäpalvelut}">${lisäpalvelut} <button id="${lisäpalvelut}" aria-label='delete item' onClick='removeItemsFromList(this.id)' type='button'>X</button></p>`
+    }if(document.getElementById('kuntosali') == null && lisäpalvelut == 'kuntosali'){
+      lpLista.innerHTML +=
+    `<p id="${lisäpalvelut}">${lisäpalvelut} <button id="${lisäpalvelut}" aria-label='delete item' onClick='removeItemsFromList(this.id)' type='button'>X</button></p>`
+      }if(document.getElementById('lentokenttä') == null && lisäpalvelut == 'lentokenttä'){
+        lpLista.innerHTML +=
+      `<p id="${lisäpalvelut}">${lisäpalvelut} <button id="${lisäpalvelut}" aria-label='delete item' onClick='removeItemsFromList(this.id)' type='button'>X</button></p>`
+      }
+}
 }
 
 //poistetaan valitut
