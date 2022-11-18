@@ -59,6 +59,31 @@ const customAlert = (e) =>{
   }
 }
 
+// näytetään valitut itemit
+const showSelectedItems = () =>{
+
+  const retket = document.getElementsByName('retket')[0].value
+  const retketLista = document.getElementById('retketLista')
+  retketLista.style.display = ''
+  if(retketLista.childNodes.length == 1){
+  retketLista.innerHTML = //lisätään listaan
+  `   <p>Retket</p>
+  `}if(retketLista.childNodes.length > 1 && retket !== 'false' && document.getElementById('veneretki') == null || document.getElementById('kaupunkiretki') == null || document.getElementById('museoretki') == null){
+  retketLista.innerHTML +=
+  `<p id="${retket}">${retket} <button id="${retket}" aria-label='delete item' onClick='removeItemsFromList(this.id)' type='button'>X</button></p>`
+  }
+}
+
+//poistetaan valitut
+const removeItemsFromList = (e) =>{
+  console.log(e)
+  document.getElementById(`${e}`).remove()
+  const retketLista = document.getElementById('retketLista')
+  console.log(retketLista.childNodes.length)
+  if(retketLista.childNodes.length == 3){
+    retketLista.style.display = 'none'
+    }
+}
 
 //form submit heitetään form data apiin ja haetaan sieltä takasin dataa
 const submitForm = async () =>{

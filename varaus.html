@@ -71,18 +71,28 @@
             </div>
             <div class="inputContainer">
                 <label for="retker">Retket</label>
-                    <select onchange="console.log('testi')" name="retket">
+                    <select onchange="showSelectedItems()" name="retket">
                         <option value="false">ei retkiä</option>
                         <option value="veneretki">Vene retki 4h</option>
                         <option value="kaupunkiretki">kaupunki retki 2h</option>
                         <option value="museoretki">museo retki 3h</option>
                     </select>
             </div>
+            
+        </div>
+        <div id="retketLista" style="position:absolute; align-self: flex-end;">
+            
+        </div>
+        <div style="position:absolute; align-self: flex-start;">
+            <p>Retket</p>
+            <p>testi <button aria-label='delete item' onClick='alert("You deleted the item!")' type='button'>X</button></p>
+            
         </div>
         <div class="formRowContainerSelect">
             <input style="margin-right: 10%;" class="buttonStyle" type="button" value="Peruuta" onclick="customAlert('cancel')">
             <input class="buttonStyle" type="submit" value="Varaa">
         </div>
+        
       </form>
 
     <div id="custom" class="jsAlert">
