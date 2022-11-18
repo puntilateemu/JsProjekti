@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <form class="formContainer" onsubmit="submitForm(); return false">
+    <form class="formContainer" onsubmit="customAlert('varaa'); return false">
         <div class="formRowContainer">
             <div class="inputContainer">
                 <label for="fname">etunimi</label>
@@ -23,36 +23,71 @@
         <div class="formRowContainer">
             <div class="inputContainer">
                 <label for="späivä">saapumispäivä</label>
-                <input class="inputStyle" type="text" id="späivä" name="späivä">
+                <input class="inputStyle" type="date" id="späivä" name="späivä" min="" onchange="onDateSelect()" >
             </div>
             <div class="inputContainer">
                 <label for="lpäivä">lähtöpäivä</label>
-                <input class="inputStyle" type="text" id="lpäivä" name="lpäivä">
+                <input class="inputStyle" type="date" id="lpäivä" name="lpäivä" min="">
             </div>
         </div>
         <div class="formRowContainer">
             <div class="inputContainer">
                 <label for="sposti">sähköposti</label>
-                <input class="inputStyle" type="text" id="sposti" name="sposti">
+                <input class="inputStyle" type="email" id="sposti" name="sposti">
             </div>
             <div class="inputContainer">
                 <label for="puhelin">puhelin</label>
-                <input class="inputStyle" type="text" id="puhelin" name="puhelin">
+                <input class="inputStyle" type="text" id="tel" name="puhelin">
             </div>
         </div>
-        <div class="formRowContainer">
+        <div class="formRowContainerSelect">
+            <div class="inputContainer" style="margin-right: 25%;">
+                <label for="hlö">aikuiset</label>
+                    <select name="hlö">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+            </div>
             <div class="inputContainer">
-                <label for="hlö">hlömäärä</label>
-                <input class="inputStyle" type="text" id="hlö" name="hlö">
+                <label for="hlö">lapset</label>
+                    <select name="hlölapset">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
             </div>
         </div>
-        <div class="formRowContainer">
-            
+        <div class="formRowContainerSelect">
+            <div class="inputContainer" style="margin-right: 25%;">
+                <label for="lisäpalvelu">hotelli palvelut</label>
+                    <select name="lisäpalvelu">
+                        <option value="false">ei palveluita</option>
+                        <option value="Aamiainen">Aamiainen</option>
+                        <option value="Kuntosali">Kuntosali</option>
+                        <option value="lentokenttä">lentokenttä kyyti</option>
+                    </select>
+            </div>
+            <div class="inputContainer">
+                <label for="retker">Retket</label>
+                    <select onchange="console.log('testi')" name="retket">
+                        <option value="false">ei retkiä</option>
+                        <option value="veneretki">Vene retki 4h</option>
+                        <option value="kaupunkiretki">kaupunki retki 2h</option>
+                        <option value="museoretki">museo retki 3h</option>
+                    </select>
+            </div>
+        </div>
+        <div class="formRowContainerSelect">
+            <input style="margin-right: 10%;" class="buttonStyle" type="button" value="Peruuta" onclick="customAlert('cancel')">
             <input class="buttonStyle" type="submit" value="Varaa">
         </div>
       </form>
 
-    
+    <div id="custom" class="jsAlert">
+        
+    </div>
 </body>
 <script src="./src/varaus.js">
         
