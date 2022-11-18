@@ -134,12 +134,33 @@ const submitForm = async () =>{
     const puhelin = document.getElementsByName("puhelin")[0].value
     const hlö = document.getElementsByName("hlö")[0].value
     const hlöLapset = document.getElementsByName("hlölapset")[0].value
-    const lisäpalvelu = document.getElementsByName("lisäpalvelu")[0].value
-    const retket = document.getElementsByName("retket")[0].value
-    
+    const lisäpalvelu = [document.getElementById("lentokenttä"), document.getElementById("kuntosali"), document.getElementById("aamiainen")]
+    const retket = [document.getElementById("museoretki"), document.getElementById("kaupunkiretki"), document.getElementById("veneretki")]
+    let lisäpalvelutLista
+    let retketLista
+
+    //haetaan valitut palvelut
+    for(let i = 0; i<lisäpalvelu.length; i++){
+      if(lisäpalvelu[i] !== null){
+        if(lisäpalvelutLista == null){
+          lisäpalvelutLista = lisäpalvelu[i].id + '?'
+        }else{
+        lisäpalvelutLista = lisäpalvelutLista + lisäpalvelu[i].id + '?'
+        }
+      }
+    }
+    for(let i = 0; i<retket.length; i++){
+      if(retket[i] !== null){
+        if(retketLista == null){
+          retketLista = retket[i].id + '?'
+        }else{
+        retketLista = retketLista + retket[i].id + '?'
+        }
+      }
+    }
    //HUOM async funktio kantsii lukee mitä tekee
     try{
-    /*fetch("https://puntilachain.com/hotelli/varaus", { //yhdistetään apiin
+    fetch("https://puntilachain.com/hotelli/varaus", { //yhdistetään apiin
             method: "post",
             headers: {
               'Accept': 'application/json',
@@ -156,19 +177,19 @@ const submitForm = async () =>{
               puhelin: puhelin,
               hlö: hlö,
               hlölapset: hlöLapset,
-              lisäpalvelu: lisäpalvelu,
-              retket: retket
+              lisäpalvelu: lisäpalvelutLista,
+              retket: retketLista 
             }),
             cors:'no-cors'
           })
-          .then(response=>response.json()) //ootetaan vastaus
-          .then(data=>{ console.log('success'); }) //laitetaan vastaus eli varausnumero muuttujaan*/
+          .then(response=>console.log(response)) //ootetaan vastaus
+          .then(data=>{ console.log(data); }) //laitetaan vastaus eli varausnumero muuttujaan
     }catch(e){
         console.log(e) // console logataa error
     }finally{ //sitku pyyntö valmis ni redirectataan vahvistus.html missä urlin mukana vahvitus numero
-      var testi = 4534
+      var testi = 123
       const url = `/vahvistus.html?resNum=${testi}` // kyssärin jälkeen voidaan laittaa urliin kaikkee mukaan
-      window.location.href = url;
+      //window.location.href = url;
     }
 }
 
