@@ -111,13 +111,15 @@ const showSelectedItems2 = () =>{
 
 //poistetaan valitut
 const removeItemsFromList = (e) =>{
-  console.log(e)
   document.getElementById(`${e}`).remove()
   const retketLista = document.getElementById('retketLista')
-  console.log(retketLista.childNodes.length)
+  const lpLista = document.getElementById('lisäpalvelutLista')
   if(retketLista.childNodes.length == 3){
     retketLista.style.display = 'none'
     }
+    if(lpLista.childNodes.length == 3){
+      lpLista.style.display = 'none'
+      }
 }
 
 //form submit heitetään form data apiin ja haetaan sieltä takasin dataa
