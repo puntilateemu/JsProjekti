@@ -7,9 +7,27 @@ today = yyyy + '-' + mm + '-' + dd //laietataan päivä oikeaan formattiin että
 
 
 //haetaan päivämäärä kalenteriin ettei voi valita vanhaa päivää huom window.onload
+//haetaan vapaiden huoneiden määrä
 window.onload = function(){
   document.getElementById('späivä').min = today //laitetaan päivämäärä min valueksi input kenttään späivä
   document.getElementById('lpäivä').min = today //laitetaan päivämäärä min valueksi input kenttään lpäivä
+
+  //haetaan apista huoneiden jäljellä oleva määrä
+  fetch("https://puntilachain.com/hotelli/varaus/huone", {
+    method: "post",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+   
+  })
+  .then(response=>response.json())
+  .then(data=>{
+    //näytetään vapaat huoneet
+   document.getElementById('standardVapaa').innerHTML = 'Vapaana ' + data.standard + ' Standard huonetta'
+   document.getElementById('familyVapaa').innerHTML = 'Vapaana ' + data.family + ' Family huonetta'
+   document.getElementById('deluxeVapaa').innerHTML = 'Vapaana ' + data.deluxe + ' Deluxe huonetta'
+  })
 } 
 
 //varmistetaan ettei voi valita saapumispäivää pienempää
@@ -122,6 +140,38 @@ const removeItemsFromList = (e) =>{
       }
 }
 
+//hoidetaan checkboxit niin että ei voi valita montaa
+// tänne joku alertti jos ei huonetta valittu ollenkaan
+const handleCheckbox = (e) =>{
+  var checkBox1 = document.getElementById("standard")
+  var checkBox2 = document.getElementById("family")
+  var checkBox3 = document.getElementById("deluxe")
+  //estetään monen valitseminen
+  if(e == 'standard'){
+    checkBox2.checked = false
+    checkBox3.checked = false
+  }
+  if(e == 'family'){
+    checkBox1.checked = false
+    checkBox3.checked = false
+  }
+  if(e == 'deluxe'){
+    checkBox2.checked = false
+    checkBox1.checked = false
+  }
+  if(e == 'hae'){ //tää on apiin lähetystä varten
+    if(checkBox1.checked){
+      return checkBox1.id
+    }
+    if(checkBox2.checked){
+      return checkBox2.id
+    }
+    if(checkBox3.checked){
+      return checkBox3.id
+    }
+  }
+}
+
 //form submit heitetään form data apiin ja haetaan sieltä takasin dataa
 const submitForm = async () =>{
     
@@ -136,9 +186,10 @@ const submitForm = async () =>{
     const hlöLapset = document.getElementsByName("hlölapset")[0].value
     const lisäpalvelu = [document.getElementById("lentokenttä"), document.getElementById("kuntosali"), document.getElementById("aamiainen")]
     const retket = [document.getElementById("museoretki"), document.getElementById("kaupunkiretki"), document.getElementById("veneretki")]
+    const huone = handleCheckbox('hae')
     let lisäpalvelutLista
     let retketLista
-
+    let sendRes //varaus numero tähän muuttujaan ja lähetetään urlin kanssa vahvistukseen
     //haetaan valitut palvelut
     for(let i = 0; i<lisäpalvelu.length; i++){
       if(lisäpalvelu[i] !== null){
@@ -177,19 +228,16 @@ const submitForm = async () =>{
               puhelin: puhelin,
               hlö: hlö,
               hlölapset: hlöLapset,
-              lisäpalvelu: lisäpalvelutLista,
-              retket: retketLista 
+              lisäpalvelu: lisäpalvelutLista ? lisäpalvelutLista : false ,
+              retket: retketLista ? retketLista : false,
+              huone: huone
             }),
-            cors:'no-cors'
+            cors:'cors'
           })
-          .then(response=>console.log(response)) //ootetaan vastaus
-          .then(data=>{ console.log(data); }) //laitetaan vastaus eli varausnumero muuttujaan
+          .then(response=>response.json()) //ootetaan vastaus
+          .then(data=>{ console.log(data.res); const url = `/vahvistus.html?resNum=${data.res}` ; window.location.href = url;}) //laitetaan vastaus eli varausnumero muuttujaan
     }catch(e){
         console.log(e) // console logataa error
-    }finally{ //sitku pyyntö valmis ni redirectataan vahvistus.html missä urlin mukana vahvitus numero
-      var testi = 123
-      const url = `/vahvistus.html?resNum=${testi}` // kyssärin jälkeen voidaan laittaa urliin kaikkee mukaan
-      //window.location.href = url;
     }
 }
 

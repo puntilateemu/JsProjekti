@@ -18,7 +18,7 @@ fetch("https://puntilachain.com/hotelli/varaus/admin", {
         let tr = document.createElement('tr');
         
         let td1 = document.createElement('td');
-        td1.textContent = user.etunimi;
+        td1.textContent =  user.etunimi;
         tr.appendChild(td1);
         
         let td2 = document.createElement('td');
@@ -28,6 +28,10 @@ fetch("https://puntilachain.com/hotelli/varaus/admin", {
         let td3 = document.createElement('td');
         td3.textContent = user.varausnumero;
         tr.appendChild(td3);
+
+        let td10 = document.createElement('td');
+        td10.textContent = user.id;
+        tr.appendChild(td10);
 
         let td4 = document.createElement('td');
         td4.textContent = user.puhelin;
@@ -52,6 +56,14 @@ fetch("https://puntilachain.com/hotelli/varaus/admin", {
         let td9 = document.createElement('td');
         td9.textContent = user.hlömäärä;
         tr.appendChild(td9);
+
+        let td11 = document.createElement('td');
+        td11.textContent = user.retket;
+        tr.appendChild(td11);
+
+        let td12 = document.createElement('td');
+        td12.textContent = user.lisäpalvelut;
+        tr.appendChild(td12);
         
         table.appendChild(tr);
     }
