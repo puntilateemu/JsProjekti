@@ -40,6 +40,26 @@
                 <input class="inputStyle" type="text" id="tel" name="puhelin">
             </div>
         </div>
+        <div class="formRowContainer" style="justify-content: center;">
+            <div class="inputContainer">
+                <p>Standard</p>
+                <input type="checkbox" id="standard" value="standard" onclick="handleCheckbox(this.id)" />
+                <label class="checkboxLabel" for="standard"><img src="./assets/Standard.jpg" /></label>
+                <p id="standardVapaa"></p>
+            </div>
+            <div class="inputContainer">
+                <p>Family</p>
+                <input type="checkbox" id="family" value="family" onclick="handleCheckbox(this.id)"/>
+                <label class="checkboxLabel" for="family"><img src="./assets/Family.jpg" /></label>
+                <p id="familyVapaa"></p>
+            </div>
+            <div class="inputContainer">
+                <p>Deluxe</p>
+                <input type="checkbox" id="deluxe" value="deluxe" onclick="handleCheckbox(this.id)"/>
+                <label class="checkboxLabel" for="deluxe"><img src="./assets/Deluxe.jpg" /></label>
+                <p id="deluxeVapaa"></p>
+            </div>
+        </div>
         <div class="formRowContainerSelect">
             <div class="inputContainer" style="margin-right: 25%;">
                 <label for="hlö">aikuiset</label>
@@ -61,28 +81,35 @@
         </div>
         <div class="formRowContainerSelect">
             <div class="inputContainer" style="margin-right: 25%;">
-                <label for="lisäpalvelu">hotelli palvelut</label>
-                    <select name="lisäpalvelu">
-                        <option value="false">ei palveluita</option>
-                        <option value="Aamiainen">Aamiainen</option>
-                        <option value="Kuntosali">Kuntosali</option>
-                        <option value="lentokenttä">lentokenttä kyyti</option>
+                <label for="lisäpalvelut">Hotellin palvelut:</label>
+                    <select onchange="showSelectedItems2()" name="lisäpalvelut">
+                        <option value="false">Ei lisäpalveluita</option>
+                        <option value="aamiainen">Aamiainen</option>
+                        <option value="kuntosali">Kuntosali</option>
+                        <option value="lentokenttä">Lentokenttäkyyti</option>
                     </select>
             </div>
             <div class="inputContainer">
-                <label for="retker">Retket</label>
-                    <select onchange="console.log('testi')" name="retket">
-                        <option value="false">ei retkiä</option>
-                        <option value="veneretki">Vene retki 4h</option>
-                        <option value="kaupunkiretki">kaupunki retki 2h</option>
-                        <option value="museoretki">museo retki 3h</option>
+                <label for="retket">Retket:</label>
+                    <select onchange="showSelectedItems()" name="retket">
+                        <option value="false">Ei retkiä</option>
+                        <option value="veneretki">Veneretki 4h</option>
+                        <option value="kaupunkiretki">Kaupunkiretki 2h</option>
+                        <option value="museoretki">Museoretki 3h</option>
                     </select>
             </div>
+            
+        </div>
+        <div id="retketLista" style="position:absolute; align-self: flex-end;">
+            
+        </div>
+        <div id="lisäpalvelutLista" style="position:absolute; align-self: flex-start;">
         </div>
         <div class="formRowContainerSelect">
             <input style="margin-right: 10%;" class="buttonStyle" type="button" value="Peruuta" onclick="customAlert('cancel')">
             <input class="buttonStyle" type="submit" value="Varaa">
         </div>
+        
       </form>
 
     <div id="custom" class="jsAlert">
