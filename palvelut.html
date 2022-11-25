@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel ELite | Luksusta arjen keskellä</title>
+    <title>Hotel ELite | Palvelut</title>
     <link rel="stylesheet" href="palvelut.css">
+    <link rel="stylesheet" href="headerNav.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-        <header>
+        <header style="position: absolute;">
         <div id="navbar">
                 <div class="logo"><img src="assets/logo1.png" alt=""></a>
                 </div>
@@ -17,13 +20,107 @@
                 <li><a href="index.html">Etusivu</a></li>
                 <li><a href="huoneet.html">Huoneet</a></li>
                 <li><a href="ravintola.html">Ruoka & Juoma</a></li>
-                <li><a href="varaa.html">Varaa Huone</a></li>
+                <li><a href="varaus.html">Varaa Huone</a></li>
                 <li><a href="palvelut.html">Palvelut</a></li>
                 <li><a href="contact.html">Ota Yhteyttä</a></li>  
             </ul>
             </div>
         </div>
     </header>
-    <p>Palvelut testi</p>
+        <div class="palvelutContainer">
+            <div class="palvelutBox">
+                <div class="palvelutRowHeader">
+                    <h1>Retket</h1>
+                    <h1>Lisäpalvelut</h1>
+                </div>
+                <div style="display: flex; width:100%;flex-direction:row">
+                    <div class="palvelutSmallBox">
+                        <div class="palvelutBoxRow">
+                            <img src="./assets/museoretki.jpg" style="width: 50%;">
+                                <div class="infoBox">
+                                    <h3 class="headerInBox">museoretki</h3>
+                                    <p style="margin-left: 5%;">Retken kesto 3h, retkellä blaa blaa blaa blaablaa blaablaa blaa blaa blaablaa blaablaa blaa</p>
+                                </div>
+                        </div>
+                        <div class="palvelutBoxRow" style="margin-top:3%">
+                            <img src="./assets/veneretki.jpg" style="width: 50%;">
+                                <div class="infoBox">
+                                    <h3 class="headerInBox">Veneretki</h3>
+                                    <p style="margin-left: 5%;">Retken kesto 4h, retkellä blaa blaa blaa blaablaa blaablaa blaa blaa blaablaa blaablaa blaa</p>
+                                </div>
+                        </div>
+                        <div class="palvelutBoxRow" style="margin-top:3%">
+                            <img src="./assets/kaupunkiretki.jpg" style="width: 50%;">
+                                <div class="infoBox">
+                                    <h3 class="headerInBox">Kaupunkiretki</h3>
+                                    <p style="margin-left: 5%;">Retken kesto 2h, retkellä blaa blaa blaa blaablaa blaablaa blaa blaa blaablaa blaablaa blaa</p>
+                                </div>
+                        </div>
+                        <div class="palvelutBoxRow" style="margin-top:3%">
+                            <img src="./assets/laskuvarjo.jpg" style="width: 50%;">
+                                <div class="infoBox">
+                                    <h3 class="headerInBox">Laskuvarjo hyppy</h3>
+                                    <p style="margin-left: 5%;">Retken kesto 8h, retkellä blaa blaa blaa blaablaa blaablaa blaa blaa blaablaa blaablaa blaa</p>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="palvelutSmallBox" style="border-left:  3px solid rgb(0, 0, 0);">
+                        <div class="palvelutBoxRow">
+                            <img src="./assets/aamupala.jpg" style="width: 50%;">
+                                <div class="infoBox">
+                                    <h3 class="headerInBox">Buffe aamiainen</h3>
+                                    <p style="margin-left: 5%;">hinta miljoona, aamupalalla blaa blaa blaa blaablaa blaablaa blaa blaa blaablaa blaablaa blaa</p>
+                                </div>
+                        </div>
+                        <div class="palvelutBoxRow" style="margin-top:3%">
+                            <img src="./assets/kuntosali.jpg" style="width: 50%;">
+                                <div class="infoBox">
+                                    <h3 class="headerInBox">Kuntosali</h3>
+                                    <p style="margin-left: 5%;">hinta miljoona, kuntosali blaa blaa blaa blaablaa blaablaa blaa blaa blaablaa blaablaa blaa</p>
+                                </div>
+                        </div>
+                        <div class="palvelutBoxRow" style="margin-top:3%">
+                            <img src="./assets/Spa.jpg" style="width: 50%;">
+                                <div class="infoBox">
+                                    <h3 class="headerInBox">Spa</h3>
+                                    <p style="margin-left: 5%;">hinta miljoona, kokoustila blaa blaa blaa blaablaa blaablaa blaa blaa blaablaa blaablaa blaa</p>
+                                </div>
+                        </div>
+                        <div class="palvelutBoxRow" style="margin-top:3%">
+                            <img src="./assets/kokoustila.jpg" style="width: 50%;">
+                                <div class="infoBox">
+                                    <h3 class="headerInBox">Kokoustilat</h3>
+                                    <p style="margin-left: 5%;">hinta miljoona, kokoustila blaa blaa blaa blaablaa blaablaa blaa blaa blaablaa blaablaa blaa</p>
+                                </div>
+                        </div>
+                        <div class="palvelutBoxRow" style="margin-top:3%">
+                            <img src="./assets/lentokenttäkyyti.jpg" style="width: 50%;">
+                                <div class="infoBox">
+                                    <h3 class="headerInBox">Lento kenttäkyyti</h3>
+                                    <p style="margin-left: 5%;">hinta miljoona, lentokenttäkyyti blaa blaa blaa blaablaa blaablaa blaa blaa blaablaa blaablaa blaa</p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer style="position:relative ; bottom:0;">
+            <div class="footer-info">
+                <h3>Seuraa meitä</h3>
+                <ul class="socials">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-cr">
+                <p>Copyright &copy;2022. Designed by <span>TTJS</span></p>
+            </div>
+        
+        
+            <div class="footer"></div>
+        </footer>
   </body>
+  
 </html>

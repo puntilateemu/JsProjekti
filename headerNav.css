@@ -1,12 +1,11 @@
-html, body{
-    margin: 0;
-    padding: 0;
-    background-color:rgb(233, 218, 198);
-}
-
 header{
+    position:fixed;
+    top:0; left: 0; right:0;
+    background: #f6e0b5;
     border-bottom: solid;
-    padding: 5px;
+    padding: 5;
+    display: flex;
+    align-items: center;
 }
 
 .inner_navbar {
@@ -66,14 +65,14 @@ header{
     padding-top: 1rem;
 }
 
-ul a:hover{
+.inner_navbar ul a:hover{
     color: #000000 !important;
   }
-  nav li{
+  .inner_navbar nav li{
       text-align: center;
       text-transform: uppercase;
   }
-  li > a:after{
+  .inner_navbar li > a:after{
       content: '';
       display: block;
       height: 1.5px;
@@ -81,7 +80,7 @@ ul a:hover{
       transform: scaleX(0);
       transition: transform .3s;
   }
-  li > a:hover:after{
+  .inner_navbar li > a:hover:after{
       transform: scaleX(1);
       transition: transform .3s;
   }

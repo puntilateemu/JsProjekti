@@ -5,116 +5,157 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="varaus.css">
+    <link rel="stylesheet" href="headerNav.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Varaus</title>
 </head>
 <body>
+    <header  style="position: absolute;">
+        <div id="navbar">
+                <div class="logo"><img src="assets/logo1.png" alt=""></a>
+                </div>
+            <div class="inner_navbar">
+            <ul>
+                <li><a href="index.html">Etusivu</a></li>
+                <li><a href="huoneet.html">Huoneet</a></li>
+                <li><a href="ravintola.html">Ruoka & Juoma</a></li>
+                <li><a href="varaus.html">Varaa Huone</a></li>
+                <li><a href="palvelut.html">Palvelut</a></li>
+                <li><a href="contact.html">Ota Yhteyttä</a></li>  
+            </ul>
+            </div>
+        </div>
+    </header> 
+    <div id="bodylike">
+        <form class="formContainer" onsubmit="customAlert('varaa'); return false">
+             <div class="formRowContainer">
+                 <div class="inputContainer">
+                     <label for="fname">Etunimi</label>
+                     <input class="inputStyle" type="text" id="fname" name="fname">
+                 </div>
+                 <div class="inputContainer">
+                     <label for="lname">Sukunimi</label>
+                     <input class="inputStyle" type="text" id="lname" name="lname">
+                 </div>
+             </div>
+             <div class="formRowContainer">
+                 <div class="inputContainer">
+                     <label for="späivä">Saapumispäivä</label>
+                     <input class="inputStyle" type="date" id="späivä" name="späivä" min="" onchange="onDateSelect()">
+                 </div>
+                 <div class="inputContainer">
+                     <label for="lpäivä">Lähtöpäivä</label>
+                     <input class="inputStyle" type="date" id="lpäivä" name="lpäivä" min="">
+                 </div>
+             </div>
+             <div class="formRowContainer">
+                 <div class="inputContainer">
+                     <label for="sposti">Sähköposti</label>
+                     <input class="inputStyle" type="email" id="sposti" name="sposti">
+                 </div>
+                 <div class="inputContainer">
+                     <label for="puhelin">Puhelin</label>
+                     <input class="inputStyle" type="text" id="tel" name="puhelin">
+                 </div>
+             </div>
+             <div class="formRowContainer" style="justify-content: center;">
+                 <div class="inputContainer">
+                     <p>Standard</p>
+                     <input type="checkbox" id="standard" value="standard" onclick="handleCheckbox(this.id)" />
+                     <label class="checkboxLabel" for="standard"><img src="./assets/Standard.jpg" /></label>
+                     <p id="standardVapaa"></p>
+                 </div>
+                 <div class="inputContainer">
+                     <p>Family</p>
+                     <input type="checkbox" id="family" value="family" onclick="handleCheckbox(this.id)"/>
+                     <label class="checkboxLabel" for="family"><img src="./assets/Family.jpg" /></label>
+                     <p id="familyVapaa"></p>
+                 </div>
+                 <div class="inputContainer">
+                     <p>Deluxe</p>
+                     <input type="checkbox" id="deluxe" value="deluxe" onclick="handleCheckbox(this.id)"/>
+                     <label class="checkboxLabel" for="deluxe"><img src="./assets/Deluxe.jpg" /></label>
+                     <p id="deluxeVapaa"></p>
+                 </div>
+             </div>
+             <div class="formRowContainerSelect">
+                 <div class="inputContainer" style="margin-right: 25%;">
+                     <label for="hlö">Aikuiset</label>
+                     <select name="hlö">
+                         <option value="1">1</option>
+                         <option value="2">2</option>
+                         <option value="3">3</option>
+                         <option value="4">4</option>
+                     </select>
+                 </div>
+                 <div class="inputContainer">
+                     <label for="hlö">Lapset</label>
+                     <select name="hlölapset">
+                         <option value="0">0</option>
+                         <option value="1">1</option>
+                         <option value="2">2</option>
+                         <option value="3">3</option>
+                     </select>
+                 </div>
+             </div>
+             <div class="formRowContainerSelect">
+                 <div class="inputContainer" style="margin-right: 25%;">
+                     <label for="lisäpalvelut">Hotellin palvelut</label>
+                     <select onchange="showSelectedItems2()" name="lisäpalvelut">
+                         <option value="false">Ei palveluita</option>
+                         <option value="aamiainen">Aamiainen</option>
+                         <option value="kuntosali">Kuntosali</option>
+                         <option value="lentokenttä">Lentokenttäkyyti</option>
+                     </select>
+                 </div>
+                 <div class="inputContainer">
+                     <label for="retket">Retket</label>
+                     <select onchange="showSelectedItems()" name="retket">
+                         <option value="false">Ei retkiä</option>
+                         <option value="veneretki">Veneretki 4h</option>
+                         <option value="kaupunkiretki">Kaupunkiretki 2h</option>
+                         <option value="museoretki">Museoretki 3h</option>
+                     </select>
+                 </div>
+             </div>
 
-    <form class="formContainer" onsubmit="customAlert('varaa'); return false">
-        <div class="formRowContainer">
-            <div class="inputContainer">
-                <label for="fname">etunimi</label>
-                <input class="inputStyle" type="text" id="fname" name="fname">
+            <div id="retketLista" style="position:absolute; align-self: flex-end;">  
             </div>
-            <div class="inputContainer">
-                <label for="lname">sukunimi</label>
-                <input class="inputStyle" type="text" id="lname" name="lname">
-            </div>
-        </div>
-        <div class="formRowContainer">
-            <div class="inputContainer">
-                <label for="späivä">saapumispäivä</label>
-                <input class="inputStyle" type="date" id="späivä" name="späivä" min="" onchange="onDateSelect()" >
-            </div>
-            <div class="inputContainer">
-                <label for="lpäivä">lähtöpäivä</label>
-                <input class="inputStyle" type="date" id="lpäivä" name="lpäivä" min="">
-            </div>
-        </div>
-        <div class="formRowContainer">
-            <div class="inputContainer">
-                <label for="sposti">sähköposti</label>
-                <input class="inputStyle" type="email" id="sposti" name="sposti">
-            </div>
-            <div class="inputContainer">
-                <label for="puhelin">puhelin</label>
-                <input class="inputStyle" type="text" id="tel" name="puhelin">
-            </div>
-        </div>
-        <div class="formRowContainer" style="justify-content: center;">
-            <div class="inputContainer">
-                <p>Standard</p>
-                <input type="checkbox" id="standard" value="standard" onclick="handleCheckbox(this.id)" />
-                <label class="checkboxLabel" for="standard"><img src="./assets/Standard.jpg" /></label>
-                <p id="standardVapaa"></p>
-            </div>
-            <div class="inputContainer">
-                <p>Family</p>
-                <input type="checkbox" id="family" value="family" onclick="handleCheckbox(this.id)"/>
-                <label class="checkboxLabel" for="family"><img src="./assets/Family.jpg" /></label>
-                <p id="familyVapaa"></p>
-            </div>
-            <div class="inputContainer">
-                <p>Deluxe</p>
-                <input type="checkbox" id="deluxe" value="deluxe" onclick="handleCheckbox(this.id)"/>
-                <label class="checkboxLabel" for="deluxe"><img src="./assets/Deluxe.jpg" /></label>
-                <p id="deluxeVapaa"></p>
-            </div>
-        </div>
-        <div class="formRowContainerSelect">
-            <div class="inputContainer" style="margin-right: 25%;">
-                <label for="hlö">aikuiset</label>
-                    <select name="hlö">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-            </div>
-            <div class="inputContainer">
-                <label for="hlö">lapset</label>
-                    <select name="hlölapset">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                    </select>
-            </div>
-        </div>
-        <div class="formRowContainerSelect">
-            <div class="inputContainer" style="margin-right: 25%;">
-                <label for="lisäpalvelut">Hotellin palvelut:</label>
-                    <select onchange="showSelectedItems2()" name="lisäpalvelut">
-                        <option value="false">Ei lisäpalveluita</option>
-                        <option value="aamiainen">Aamiainen</option>
-                        <option value="kuntosali">Kuntosali</option>
-                        <option value="lentokenttä">Lentokenttäkyyti</option>
-                    </select>
-            </div>
-            <div class="inputContainer">
-                <label for="retket">Retket:</label>
-                    <select onchange="showSelectedItems()" name="retket">
-                        <option value="false">Ei retkiä</option>
-                        <option value="veneretki">Veneretki 4h</option>
-                        <option value="kaupunkiretki">Kaupunkiretki 2h</option>
-                        <option value="museoretki">Museoretki 3h</option>
-                    </select>
-            </div>
-            
-        </div>
-        <div id="retketLista" style="position:absolute; align-self: flex-end;">
-            
-        </div>
-        <div id="lisäpalvelutLista" style="position:absolute; align-self: flex-start;">
-        </div>
-        <div class="formRowContainerSelect">
-            <input style="margin-right: 10%;" class="buttonStyle" type="button" value="Peruuta" onclick="customAlert('cancel')">
-            <input class="buttonStyle" type="submit" value="Varaa">
-        </div>
-        
-      </form>
 
-    <div id="custom" class="jsAlert">
+            <div id="lisäpalvelutLista" style="position:absolute; align-self: flex-start;">
+            </div>
+            <br>
+             <div class="formRowContainerSelect">
+                 <input style="margin-right: 10%;" class="buttonStyle" type="button" value="Peruuta"
+                     onclick="customAlert('cancel')">
+                 <input class="buttonStyle" type="submit" value="Varaa">
+             </div>
+             </div>
+
+         </form>
+     </div>
+         
+         <div id="custom" class="jsAlert">
+         
+         </div>
+         <footer style="position:relative ; bottom:0;">
+            <div class="footer-info">
+                <h3>Seuraa meitä</h3>
+                <ul class="socials">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-cr">
+                <p>Copyright &copy;2022. Designed by <span>TTJS</span></p>
+            </div>
         
-    </div>
+        
+            <div class="footer"></div>
+        </footer>
 </body>
 <script src="./src/varaus.js">
         

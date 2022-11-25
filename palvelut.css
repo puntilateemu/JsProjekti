@@ -1,90 +1,69 @@
 html, body{
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
+    max-width: auto;
+    min-width: 480px;
     background-color:rgb(233, 218, 198);
 }
+/*palvelut*/
 
-header{
-    border-bottom: solid;
-    padding: 5px;
-}
-
-.inner_navbar {
-    margin: 0 auto;
-    max-width: 1920px;
-    min-width: 480px;
-}
-
-.inner_navbar ul {
-    margin: 0;
-    padding-top: 10rem;
-    list-style: none;
-    text-align: right;
-    
-}
-
-.inner_navbar ul li {
-    float: none;
-    display: inline-block;
-}
-
-.inner_navbar ul li:nth-child(1){
-    float: left;
-}
-
-.inner_navbar ul li:nth-child(2){
-    float: left;
-}
-
-.inner_navbar ul li:nth-child(3){
-    float: left;
-}
-
-.inner_navbar ul li a{
-    color: black;
-    font-size: 22px;
-    text-transform: uppercase;
-    text-decoration: none;
-    display: block;
-    padding: 20px 20px;
-}
-
-#navbar{
+.palvelutContainer{
     width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%;
+    margin-bottom: 1%;
     position: relative;
 }
-
-.logo {
-    width: 300px;
-    height: 300px;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    content: "";
-    margin-left: -150px;
-    text-align: center;
-    padding-top: 1rem;
+.palvelutBox{
+    width: 98%;
+    height: 98%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
 }
 
-ul a:hover{
-    color: #000000 !important;
-  }
-  nav li{
-      text-align: center;
-      text-transform: uppercase;
-  }
-  li > a:after{
-      content: '';
-      display: block;
-      height: 1.5px;
-      background: #000000;
-      transform: scaleX(0);
-      transition: transform .3s;
-  }
-  li > a:hover:after{
-      transform: scaleX(1);
-      transition: transform .3s;
-  }
-  .active{
-      color: #000000 !important;
-  }
+.vl {
+    border-left: 6px solid rgb(0, 0, 0);
+    height: 96%;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.palvelutRowHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.palvelutSmallBox{
+    display: flex;
+    width:49%;
+    height: 80%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1%;
+}
+.palvelutBoxRow{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+}
+.infoBox{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.headerInBox{
+    margin-left: 25%;
+    font-weight: 400;
+    font-style: oblique;
+    text-align: center;
+}

@@ -1,6 +1,12 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    background-color:rgb(233, 218, 198);
+}
+
 /* Vaihetaan värit sun muut tyylit vielä sopiviks*/
 /*tää vaan esimerkki*/
-body{
+#bodylike{
     margin:0;
     padding:0;
     display: flex;
@@ -8,12 +14,15 @@ body{
     align-items: center;
     width: 100%;
     height: 100vh;
+    position: relative;
+    margin-top: 12%;
 }
 .formContainer{
     display: flex;
     flex-direction: column;
     padding: 5%;
     width: 60%;
+    height: 65%;
     background-color: blanchedalmond;
     box-shadow: 10px 10px 8px #888888;
     border-radius: 20px;
@@ -25,7 +34,6 @@ body{
     display: flex;
     flex-direction: row;
     width: 50%;
-    margin-top: 3%;
     justify-content: center;
     justify-content: space-between;
 }
@@ -59,10 +67,6 @@ body{
     margin: 4px 2px;
     cursor: pointer;
 }
-
-/*imaget*/
-
-
 .checkboxLabel {
     border: 1px solid #fff;
     padding: 10px;
@@ -77,7 +81,7 @@ body{
     -ms-user-select: none;
     user-select: none;
   }
-  
+
   .checkboxLabel::before {
     background-color: white;
     color: white;
@@ -95,24 +99,24 @@ body{
     transition-duration: 0.4s;
     transform: scale(0);
   }
-  
+
   .checkboxLabel img {
     height: 250px;
     width: 250px;
     transition-duration: 0.2s;
     transform-origin: 50% 50%;
   }
-  
+
   :checked+.checkboxLabel {
     border-color: #ddd;
   }
-  
+
   :checked+.checkboxLabel::before {
     content: "✓";
     background-color: grey;
     transform: scale(1);
   }
-  
+
   :checked+.checkboxLabel img {
     transform: scale(0.9);
     box-shadow: 0 0 5px #333;
@@ -122,6 +126,7 @@ body{
   input[type="checkbox"] {
     display: none;
   }
+
 /* alert boxi */
 
 .jsAlert{
