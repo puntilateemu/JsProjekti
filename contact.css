@@ -6,21 +6,50 @@ html, body{
 
 /* Contact*/
 .contactContainer{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15%;
-    margin-bottom: 1%;
-    position: relative;
-}
-.contactBox{
     width: 98%;
     height: 98%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 20px;
+    flex-direction: column;
+    margin-top: 15%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    position: relative;
+}
+.contactHead{
+    width: 30%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contactBox{
+    width: 30%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.smallerBoxLeft{
+    width: 50%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding-left: 50px;
+}
+.smallerBoxRight{
+    width: 50%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding-left: 50px;
+}
+.contactText {
+    color: black;
 }
