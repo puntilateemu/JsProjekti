@@ -189,7 +189,10 @@ const submitForm = async () =>{
     const huone = handleCheckbox('hae')
     let lisäpalvelutLista
     let retketLista
-    let sendRes //varaus numero tähän muuttujaan ja lähetetään urlin kanssa vahvistukseen
+
+    //TÄHÄN VIELÄ PÄIVÄT RETKILLE / PALVELUILLE 
+
+    let sendRes //tätä ei tarvii tapahtuu bäkin puolella
     //haetaan valitut palvelut
     for(let i = 0; i<lisäpalvelu.length; i++){
       if(lisäpalvelu[i] !== null){
