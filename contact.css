@@ -1,6 +1,8 @@
 html, body{
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
+    max-width: auto;
+    min-width: 480px;
     background-color:rgb(233, 218, 198);
 }
 
@@ -30,7 +32,7 @@ html, body{
     display: flex;
     justify-content: center;
     align-items: center;
-
+    padding-top: 30px;
 }
 .smallerBoxLeft{
     width: 50%;
@@ -49,6 +51,15 @@ html, body{
     justify-content: center;
     align-items: left;
     padding-left: 50px;
+}
+.topBox{
+    width: 82%;
+    height: 50%;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    text-align: justify;
+    line-height: 25px;
 }
 .contactText {
     color: black;
