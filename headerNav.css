@@ -18,25 +18,13 @@ header{
     margin: 0;
     padding-top: 10rem;
     list-style: none;
-    text-align: right;
+    text-align: center;
     
 }
 
 .inner_navbar ul li {
     float: none;
     display: inline-block;
-}
-
-.inner_navbar ul li:nth-child(1){
-    float: left;
-}
-
-.inner_navbar ul li:nth-child(2){
-    float: left;
-}
-
-.inner_navbar ul li:nth-child(3){
-    float: left;
 }
 
 .inner_navbar ul li a{
