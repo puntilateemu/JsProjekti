@@ -3,4 +3,13 @@ html, body{
     padding: 0;
     background-color:rgb(233, 218, 198);
 }
-
+.huoneetContainer{
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%;
+    margin-bottom: 1%;
+    position: relative;
+}
