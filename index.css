@@ -1,18 +1,22 @@
 html, body{
-    background-image: url(assets/Index2.jpg);
-    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
-    background-position: 100% 100%;
-    background-repeat: no-repeat;
 }
 .indexContainer{
     width: 100%;
-    min-height: 900px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15%;
-    margin-bottom: 1%;
-    position: relative;
+    height: 80vh;
+    background-image: url(assets/Index2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+
+
+
+
+
+
+
+
+
+
