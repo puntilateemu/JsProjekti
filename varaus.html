@@ -21,10 +21,14 @@
                 <li><a href="huoneet.html">Huoneet</a></li>
                 <li><a href="ravintola.html">Ruoka & Juoma</a></li>
                 <li><a href="varaus.html">Varaa Huone</a></li>
+                <li style="cursor:grab" onclick="changeRes()"><a >Muuta Varausta</a></li>
                 <li><a href="palvelut.html">Palvelut</a></li>
                 <li><a href="contact.html">Ota Yhteyttä</a></li>  
             </ul>
             </div>
+        </div>
+        <div id="muutavaraus" class="jsAlert">
+         
         </div>
     </header> 
     <div id="bodylike">
@@ -42,7 +46,7 @@
              <div class="formRowContainer">
                  <div class="inputContainer">
                      <label for="späivä">Saapumispäivä</label>
-                     <input class="inputStyle" type="date" id="späivä" name="späivä" min="" onchange="onDateSelect()">
+                     <input class="inputStyle" type="date" id="späivä" name="späivä" min=""  onchange="onDateSelect()">
                  </div>
                  <div class="inputContainer">
                      <label for="lpäivä">Lähtöpäivä</label>
@@ -59,28 +63,28 @@
                      <input class="inputStyle" type="text" id="tel" name="puhelin">
                  </div>
              </div>
-             <div class="formRowContainer" style="justify-content: center;">
+             <div class="formRowContainer" style="justify-content: center; width: 100%;">
                  <div class="inputContainer">
-                     <p>Standard</p>
+                     <p style="text-align: center;" >Standard</p>
                      <input type="checkbox" id="standard" value="standard" onclick="handleCheckbox(this.id)" />
                      <label class="checkboxLabel" for="standard"><img src="./assets/Standard.jpg" /></label>
-                     <p id="standardVapaa"></p>
+                     <p style="text-align: center;" id="standardVapaa"></p>
                  </div>
                  <div class="inputContainer">
-                     <p>Family</p>
+                     <p style="text-align: center;">Family</p>
                      <input type="checkbox" id="family" value="family" onclick="handleCheckbox(this.id)"/>
                      <label class="checkboxLabel" for="family"><img src="./assets/Family.jpg" /></label>
-                     <p id="familyVapaa"></p>
+                     <p style="text-align: center;" id="familyVapaa"></p>
                  </div>
                  <div class="inputContainer">
-                     <p>Deluxe</p>
+                     <p style="text-align: center;">Deluxe</p>
                      <input type="checkbox" id="deluxe" value="deluxe" onclick="handleCheckbox(this.id)"/>
                      <label class="checkboxLabel" for="deluxe"><img src="./assets/Deluxe.jpg" /></label>
-                     <p id="deluxeVapaa"></p>
+                     <p style="text-align: center;" id="deluxeVapaa"></p>
                  </div>
              </div>
              <div class="formRowContainerSelect">
-                 <div class="inputContainer" style="margin-right: 25%;">
+                 <div class="inputContainer" style="margin-right: 25%; width: 10%;">
                      <label for="hlö">Aikuiset</label>
                      <select name="hlö">
                          <option value="1">1</option>
@@ -89,7 +93,7 @@
                          <option value="4">4</option>
                      </select>
                  </div>
-                 <div class="inputContainer">
+                 <div class="inputContainer" style=" width: 10%;">
                      <label for="hlö">Lapset</label>
                      <select name="hlölapset">
                          <option value="0">0</option>
@@ -100,7 +104,7 @@
                  </div>
              </div>
              <div class="formRowContainerSelect">
-                 <div class="inputContainer" style="margin-right: 25%;">
+                 <div class="inputContainer" style="margin-right: 25%; width: 20%;">
                      <label for="lisäpalvelut">Hotellin palvelut</label>
                      <select onchange="showSelectedItems2()" name="lisäpalvelut">
                          <option value="false">Ei palveluita</option>
@@ -109,7 +113,8 @@
                          <option value="lentokenttä">Lentokenttäkyyti</option>
                      </select>
                  </div>
-                 <div class="inputContainer">
+                
+                 <div class="inputContainer" style=" width: 20%;">
                      <label for="retket">Retket</label>
                      <select onchange="showSelectedItems()" name="retket">
                          <option value="false">Ei retkiä</option>
@@ -120,11 +125,20 @@
                  </div>
              </div>
 
+             <div class="formRowContainerSelect">
+                <div id="lisäpalvelutLista" class="palvelutContainer" style="margin-right: 10%;">
+                    <p>lisäpalvelut</p>
+                </div>
+                <div class="palvelutContainer" id="retketLista" >
+                    <p>Retket</p>  
+                </div>
+             </div>
+             <!--
             <div id="retketLista" style="position:absolute; align-self: flex-end;">  
             </div>
 
             <div id="lisäpalvelutLista" style="position:absolute; align-self: flex-start;">
-            </div>
+            </div>-->
             <br>
              <div class="formRowContainerSelect">
                  <input style="margin-right: 10%;" class="buttonStyle" type="button" value="Peruuta"
@@ -136,11 +150,10 @@
          </form>
         
      </div>
-     <div id="custom" class="jsAlert">
-         
-    </div>
-    
          <footer style="position:relative ; bottom:0;">
+            <div id="custom" class="jsAlert">
+         
+            </div>
             <div class="footer-info">
                 <h3>Seuraa meitä</h3>
                 <ul class="socials">
