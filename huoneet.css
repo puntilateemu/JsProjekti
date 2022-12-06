@@ -12,6 +12,7 @@ html, body{
     margin-top: 13%;
     margin-bottom: 1%;
     position: relative;
+    padding-top: 35px;
 }
 div.gallery {
     margin: 5px;
@@ -21,7 +22,6 @@ div.gallery {
     width: 600px;
     display: grid;
     margin: 0px 10px 30px 20px;
-    
 }
     
 div.gallery:hover {
