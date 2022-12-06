@@ -18,25 +18,12 @@ header{
     margin: 0;
     padding-top: 10rem;
     list-style: none;
-    text-align: right;
-    
+    text-align: center;
 }
 
 .inner_navbar ul li {
     float: none;
     display: inline-block;
-}
-
-.inner_navbar ul li:nth-child(1){
-    float: left;
-}
-
-.inner_navbar ul li:nth-child(2){
-    float: left;
-}
-
-.inner_navbar ul li:nth-child(3){
-    float: left;
 }
 
 .inner_navbar ul li a{
@@ -55,9 +42,9 @@ header{
 
 .logo {
     width: 300px;
-    height: 300px;
-    position: absolute;
-    left: 50%;
+    height: 1px;
+    position: relative;
+    left: 49%;
     top: 0;
     content: "";
     margin-left: -150px;
@@ -67,23 +54,24 @@ header{
 
 .inner_navbar ul a:hover{
     color: #000000 !important;
-  }
-  .inner_navbar nav li{
-      text-align: center;
-      text-transform: uppercase;
-  }
-  .inner_navbar li > a:after{
-      content: '';
-      display: block;
-      height: 1.5px;
-      background: #000000;
-      transform: scaleX(0);
-      transition: transform .3s;
-  }
-  .inner_navbar li > a:hover:after{
-      transform: scaleX(1);
-      transition: transform .3s;
-  }
-  .active{
-      color: #000000 !important;
-  }
+}
+
+.inner_navbar nav li{
+    text-align: center;
+    text-transform: uppercase;
+}
+.inner_navbar li > a:after{
+    content: '';
+    display: block;
+    height: 1.5px;
+    background: #000000;
+    transform: scaleX(0);
+    transition: transform .3s;
+}
+.inner_navbar li > a:hover:after{
+    transform: scaleX(1);
+    transition: transform .3s;
+}
+.active{
+    color: #000000 !important;
+}

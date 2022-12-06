@@ -13,15 +13,15 @@ html, body{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
     position: relative;
-    margin-top: 12%;
+    margin-top: 22%;
+    margin-bottom: 5%;
 }
 .formContainer{
     display: flex;
     flex-direction: column;
     padding: 5%;
-    width: 60%;
+    width: 80%;
     height: 65%;
     background-color: blanchedalmond;
     box-shadow: 10px 10px 8px #888888;
@@ -33,19 +33,23 @@ html, body{
 .formRowContainer{
     display: flex;
     flex-direction: row;
-    width: 50%;
+    width: 70%;
     justify-content: center;
     justify-content: space-between;
+    margin-top: 5%;
 }
 .formRowContainerSelect{
     display: flex;
     flex-direction: row;
-    width: 50%;
+    width: 90%;
     justify-content: center;
+    margin-bottom: 2%;
 }
 .inputContainer{
+    width: 40%;
     display: flex;
     flex-direction: column;
+    font-size: 20px;
 }
 .inputStyle{
     outline: 0; 
@@ -101,8 +105,8 @@ html, body{
   }
 
   .checkboxLabel img {
-    height: 250px;
-    width: 250px;
+    height: 100%;
+    width: 100%;
     transition-duration: 0.2s;
     transform-origin: 50% 50%;
   }
@@ -127,15 +131,37 @@ html, body{
     display: none;
   }
 
+.palvelutContainer{
+  display: block;
+  text-align: center;
+  width: 30%;
+  height: 30vh;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 2px #888888;
+}
+.palvelutPäivät{
+    outline: 0; 
+    border-width: 0 0 0;
+    border-color: black;
+    background-color: inherit;
+    width:88%;
+    font-size: 1.1vw;
+    font-weight: 400;
+    line-height: 1;
+}
+
 /* alert boxi */
 
 .jsAlert{
     display: none;
     justify-content: center;
     align-items: center;
+    bottom: 150%;
+    left: 30%;
     position: absolute;
     width: 40%;
-    height: 40%;
+    height: 100%;
     border-radius: 30px;
     z-index: 20;
     background-color: #000000;

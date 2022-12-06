@@ -1,12 +1,20 @@
 html, body{
     background-image: url(assets/Index2.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
-    max-width: auto;
-    min-width: 480px;
-    background-color: #f6e0b5;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+}
+.indexContainer{
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%;
+    margin-bottom: 1%;
+    position: relative;
 }
 
 
