@@ -43,13 +43,15 @@ const changeRes = () =>{
   `<div>
   <h1>Syötä varauksen numero</h1>
   <input style="color:white;border-color:white;" class="inputStyle" type="text" id="resnum" name="resnum">
-  <button style='margin-left:35%; margin-top:4%;' onclick="muutavaraus.style.display = 'none';getRes();">Hae Varaus</button>
+  <div style="display: flex;flex-direction: row;">
+  <button style='margin-left:25%; margin-top:4%;' onclick="muutavaraus.style.display = 'none'">Peruuta</button>
+  <button style='margin-left:5%; margin-top:4%;' onclick="muutavaraus.style.display = 'none';getRes();">Hae Varaus</button>
+  </div>
   </div>
   `
 }
 
 //haetaan varauksen tiedot lomakkeeseen
-
 const getRes = () =>{
   const resNum = document.getElementsByName("resnum")[0].value //input value
 
@@ -82,29 +84,29 @@ const getRes = () =>{
     document.getElementsByName("puhelin")[0].value = data.puhelin
     document.getElementsByName("hlö")[0].value = data.hlömäärä
    
-    if(data.lentokenttä){
+    if(data.lentokenttä !=='false'){
       document.getElementsByName('lisäpalvelut')[0].value = 'lentokenttä'
       showSelectedItems2()
     }
-    if(data.kuntosali){
+    if(data.kuntosali !=='false'){
       document.getElementsByName('lisäpalvelut')[0].value = 'kuntosali'
       showSelectedItems2()
     }
-    if(data.aamiainen){
+    if(data.aamiainen !=='false'){
       document.getElementsByName('lisäpalvelut')[0].value = 'aamiainen'
       showSelectedItems2()
     }
-    if(data.veneretki){
+    if(data.veneretki !=='false'){
       document.getElementsByName('retket')[0].value = 'veneretki'
       showSelectedItems()
       document.getElementById("venepäivä").value = data.veneretki
     }
-    if(data.museoretki){
+    if(data.museoretki !=='false'){
       document.getElementsByName('retket')[0].value = 'museoretki'
       showSelectedItems()
       document.getElementById("museopäivä").value = data.museoretki
     }
-    if(data.kaupunkiretki){
+    if(data.kaupunkiretki !=='false'){
       document.getElementsByName('retket')[0].value = 'kaupunkiretki'
       showSelectedItems()
       document.getElementById("kaupunkipäivä").value = data.kaupunkiretki
@@ -311,9 +313,9 @@ const submitForm = async () =>{
       aamiainen: document.getElementById("aamiainen")
     }
     const retket = {
-      museoretki: document.getElementById("museopäivä").value,
-      kaupunkiretki: document.getElementById("kaupunkipäivä").value,
-      veneretki: document.getElementById("venepäivä").value
+      museoretki: document.getElementById("museopäivä")? document.getElementById("museopäivä").value : 'false',
+      kaupunkiretki: document.getElementById("kaupunkipäivä")? document.getElementById("kaupunkipäivä").value : 'false',
+      veneretki: document.getElementById("venepäivä") ? document.getElementById("venepäivä").value : 'false'
     }
     const huone = handleCheckbox('hae')
 
