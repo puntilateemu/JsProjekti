@@ -84,15 +84,15 @@ const getRes = () =>{
     document.getElementsByName("puhelin")[0].value = data.puhelin
     document.getElementsByName("hlö")[0].value = data.hlömäärä
    
-    if(data.lentokenttä !=='false'){
+    if(data.lentokenttä !=='0' ){
       document.getElementsByName('lisäpalvelut')[0].value = 'lentokenttä'
       showSelectedItems2()
     }
-    if(data.kuntosali !=='false'){
+    if(data.kuntosali !=='0'){
       document.getElementsByName('lisäpalvelut')[0].value = 'kuntosali'
       showSelectedItems2()
     }
-    if(data.aamiainen !=='false'){
+    if(data.aamiainen !=='0'){
       document.getElementsByName('lisäpalvelut')[0].value = 'aamiainen'
       showSelectedItems2()
     }
@@ -308,9 +308,9 @@ const submitForm = async () =>{
     const hlöLapset = document.getElementsByName("hlölapset")[0].value
     const lisäpalvelu =
      {
-      lentokenttä: document.getElementById("lentokenttä"),
-      kuntosali: document.getElementById("kuntosali"),
-      aamiainen: document.getElementById("aamiainen")
+      lentokenttä: document.getElementById("lentokenttä") ? document.getElementById("lentokenttä") : false,
+      kuntosali: document.getElementById("kuntosali") ? document.getElementById("kuntosali") : false,
+      aamiainen: document.getElementById("aamiainen")? document.getElementById("aamiainen") : false
     }
     const retket = {
       museoretki: document.getElementById("museopäivä")? document.getElementById("museopäivä").value : 'false',
@@ -340,9 +340,9 @@ const submitForm = async () =>{
               puhelin: puhelin,
               hlö: hlö,
               hlölapset: hlöLapset,
-              lentokenttä: lisäpalvelu.lentokenttä ? JSON.parse(JSON.stringify(`haku ${späivä} vienti ${lpäivä}`)) : false ,
-              kuntosali: lisäpalvelu.kuntosali ? `alkaa ${späivä}, päättyy ${lpäivä}` : false ,
-              aamiainen: lisäpalvelu.aamiainen ? `alkaa ${späivä}, päättyy ${lpäivä}` : false ,
+              lentokenttä: lisäpalvelu.lentokenttä ? JSON.parse(JSON.stringify(`haku ${späivä} vienti ${lpäivä}`)) :'0' ,
+              kuntosali: lisäpalvelu.kuntosali ? `alkaa ${späivä}, päättyy ${lpäivä}` : '0' ,
+              aamiainen: lisäpalvelu.aamiainen ? `alkaa ${späivä}, päättyy ${lpäivä}` : '0',
               museoretki: retket.museoretki ? retket.museoretki : false,
               veneretki: retket.veneretki ? retket.veneretki : false,
               kaupunkiretki:  retket.kaupunkiretki ? retket.kaupunkiretki : false,
