@@ -8,7 +8,7 @@ html, body{
 }
 .indexContainer{
     width: 100%;
-    min-height: 80vh;
+    min-height: 900px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,14 +16,3 @@ html, body{
     margin-bottom: 1%;
     position: relative;
 }
-
-
-
-
-
-
-
-
-
-
-
