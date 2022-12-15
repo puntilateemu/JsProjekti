@@ -1,6 +1,6 @@
 
 //haetaan rest Apista kaikki varaukseen liittyvä data
-fetch("https://puntilachain.com/hotelli/varaus/admin", {
+fetch("some address here", {
     method: "post",
     headers: {
       'Accept': 'application/json',
