@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 
-//node api osoite https://puntilachain.com/hotelli/varaus
+
 //Tähän tulee data clientin formista joka lähettää edelleen mariadb
 //tähän myös saadaan haettua dataa mariadb ja lähetettyä takas clienttiin eli käyttäjälle
 app.post('/varaus', async (req, res) => {
