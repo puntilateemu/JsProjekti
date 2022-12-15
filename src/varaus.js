@@ -14,7 +14,7 @@ window.onload = function(){
   document.getElementById('lpäivä').min = today //laitetaan päivämäärä min valueksi input kenttään lpäivä
 
   //haetaan apista huoneiden jäljellä oleva määrä
-  fetch("https://puntilachain.com/hotelli/varaus/huone", {
+  fetch("Some adddress here", {
     method: "post",
     headers: {
       'Accept': 'application/json',
@@ -57,7 +57,7 @@ const getRes = () =>{
 
 
   //haetaan apista varaus tiedot lomakkeeseen
-  fetch("https://puntilachain.com/hotelli/varaus/muuta", {
+  fetch("Some address here", {
     method: "post",
     headers: {
       'Accept': 'application/json',
@@ -323,7 +323,7 @@ const submitForm = async () =>{
     
    //HUOM async funktio kantsii lukee mitä tekee
     try{
-    fetch("https://puntilachain.com/hotelli/varaus", { //yhdistetään apiin
+    fetch("Some address here", { //yhdistetään apiin
             method: "post",
             headers: {
               'Accept': 'application/json',
